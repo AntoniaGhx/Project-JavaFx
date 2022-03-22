@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.CheckBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+<HBox>
+   <VBox>
+      <children>
+
+         <Label text="Current product:" />
+
+         <TableView fx:id="tblProducts" editable="true">
+            <columns>
+               <TableColumn fx:id="colIdProduct" text="Id">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="idEntity" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colNameProduct" text="Name">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="name" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colPriceProduct" text="Price">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="price"  />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colQuantity" text="Quantity/kg">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="quantity" />
+                  </cellValueFactory>
+               </TableColumn>
+            </columns>
+         </TableView>
+
+         <Label text="Add a product:" />
+
+         <TextField fx:id="txtProductId" promptText="Product id"/>
+         <TextField fx:id="txtProductName" promptText="Name"/>
+         <TextField fx:id="txtProductPrice" promptText="Price"/>
+         <TextField fx:id="txtProductQuantity" promptText="Quantity/kg"/>
+
+         <HBox alignment="CENTER" spacing="5">
+
+         <Button fx:id="btnAddProduct" text="Add Product" onAction="#btnAddProductClick"/>
+         <Button fx:id="btnUpdateProduct" text="Update Product" onAction="#btnUpdateProductClick"/>
+         <Button fx:id="btnDeleteSelectedProduct" text="Delete Selected Product" onAction="#btnDeleteSelectedProductClick"/>
+   <!--      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>-->
+         </HBox>
+
+      </children>
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+   </VBox>
+
+   <VBox>
+      <children>
+
+         <Label text="Current Seller:" />
+
+         <TableView fx:id="tblSellers" editable="true">
+            <columns>
+               <TableColumn fx:id="colIdSeller" text="Id">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="idEntity" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colNameSeller" text="Name">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="name" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colVegetableSeller" text="Vegetable Seller">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="vegetableSeller"  />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colFruitSeller" text="Fruit Seller">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="fruitSeller" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colSellerLocationId" text="Location Id">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="locationId" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colSellerProductIds" text="Product Ids">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="productsIds" />
+                  </cellValueFactory>
+               </TableColumn>
+            </columns>
+         </TableView>
+
+         <Label text="Add a seller:" />
+
+         <TextField fx:id="txtSellerId" promptText="Seller id"/>
+         <TextField fx:id="txtSellerName" promptText="Name"/>
+         <TextField fx:id="txtSellerLocationId" promptText="Location Id"/>
+         <TextField fx:id="txtSellerProductsIds" promptText="Product Ids list"/>
+         <TextField fx:id="txtSellerLocationStartTime" promptText="Period Start"/>
+         <TextField fx:id="txtSellerLocationStopTime" promptText="Period End"/>
+
+         <CheckBox fx:id="chkVegetableSeller" text="Vegetable Seller"/>
+         <CheckBox fx:id="chkFruitSeller" text="Fruit Seller"/>
+
+         <HBox alignment="CENTER" spacing="5">
+
+            <Button fx:id="btnAddSeller" text="Add Seller" onAction="#btnAddSellerClick"/>
+            <Button fx:id="btnUpdateSeller" text="Update Seller" onAction="#btnUpdateSellerClick"/>
+            <Button fx:id="btnDeleteSelectedSeller" text="Delete Selected Seller" onAction="#btnDeleteSelectedSellerClick"/>
+            <Button fx:id="btnShowSellersWithProducts" text="Show Sellers and Products" onAction="#btnShowSellersWithProductsClick"/>
+            <!--      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>-->
+         </HBox>
+
+      </children>
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+   </VBox>
+
+   <VBox>
+      <children>
+
+         <Label text="Current Location:" />
+
+         <TableView fx:id="tblLocations" editable="true">
+            <columns>
+               <TableColumn fx:id="colIdLocation" text="Id">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="idEntity" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colStartTimeLocation" text="Start time">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="startTime" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colStopTimeLocation" text="Stop time">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="stopTime" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="colPriceLocation" text="Price">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="price" />
+                  </cellValueFactory>
+               </TableColumn>
+            </columns>
+         </TableView>
+
+         <Label text="Add a location:" />
+
+         <TextField fx:id="txtLocationId" promptText="Location id"/>
+         <TextField fx:id="txtLocationStartTime" promptText="Start time"/>
+         <TextField fx:id="txtLocationStopTime" promptText="Stop time"/>
+
+         <HBox alignment="CENTER" spacing="5">
+
+            <Button fx:id="btnAddLocation" text="Add Location" onAction="#btnAddLocationClick"/>
+            <Button fx:id="btnUpdateLocation" text="Update Location" onAction="#btnUpdateLocationClick"/>
+            <Button fx:id="btnDeleteSelectedLocation" text="Delete Selected Location" onAction="#btnDeleteSelectedLocationClick"/>
+
+         </HBox>
+
+         <HBox spacing="10" alignment="CENTER">
+            <Label text="First day:" />
+            <TextField fx:id="txtDateTimeStart" promptText="dd.mm.yyyy HH:mm"/>
+            <Label text="Last day:" />
+            <TextField fx:id="txtDateTimeEnd" promptText="dd.mm.yyyy HH:mm"/>
+            <Button fx:id="btnShowLocationWithSellersAndProducts" text="Show Locations and Sellers" onAction="#btnShowLocationWithSellersAndProductsClick"/>
+         </HBox>
+
+      </children>
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+   </VBox>
+   </HBox>
+
+   <HBox spacing="10" alignment="CENTER">
+      <Label text="Search products, sellers and locations:" />
+      <TextField fx:id="txtSearchText" promptText="Search text"/>
+      <Button fx:id="btnFullTextSearch" text="Search" onAction="#btnFullTextSearchClick"/>
+   </HBox>
+
+   <HBox spacing="10" alignment="CENTER">
+      <Label text="Searching locations starting with date and hour:" />
+      <TextField fx:id="txtDateHourStart" promptText="dd.mm.yyyy HH:mm"/>
+      <Label text="Ending with date and hour:" />
+      <TextField fx:id="txtDateHourEnd" promptText="dd.mm.yyyy HH:mm"/>
+      <Button fx:id="btnLocationDateHourSearch" text="Search" onAction="#btnTransactionDateHourSearchClick"/>
+   </HBox>
+
+   <Button fx:id="btnUndo" text="Undo" onAction="#btnUndoClick"/>
+   <Button fx:id="btnRedo" text="Redo" onAction="#btnRedoClick"/>
+
+</VBox>

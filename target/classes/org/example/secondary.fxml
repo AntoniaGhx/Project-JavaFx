@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LocationDateSearchResultsController">
+    <children>
+
+        <Label text="Locations date search results:" />
+
+        <TableView fx:id="tblLocations" editable="true">
+            <columns>
+                <TableColumn fx:id="colIdLocation" text="Id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="idEntity" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colStartTimeLocation" text="Start Period">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="startTime" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colStopTimeLocation" text="Stop Period">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="stopTime" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colPriceLocation" text="Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
